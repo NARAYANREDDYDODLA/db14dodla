@@ -3,14 +3,17 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  p Some fungi create zombies, then control their minds
-
-  button(type="button", class="btn btn-danger", onclick="update()") Press Me
+  p The man with the world’s deepest voice can make sounds humans can’t hear
+  button(type="button", class="btn btn-warning", onclick="update()") Press Me
   br
   br
   div(id = "target") 
     b Display
-    a(href='/Mask') Mask page link
+  
+  br
+  br
+  a(href='/persis') Persis link
+  
   script.  
    var client_count=0;
 
