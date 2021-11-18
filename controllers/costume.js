@@ -56,8 +56,16 @@ exports.costume_create_post = async function(req, res) {
 }; 
  
 // Handle Costume delete form on DELETE. 
-exports.costume_delete = function(req, res) { 
-    res.send('NOT IMPLEMENTED: Costume delete DELETE ' + req.params.id); 
+exports.costume_delete = async function(req, res) { 
+    console.log("delete "  + req.params.id) 
+    try { 
+        result = await Costume.findByIdAndDelete( req.params.id) 
+        console.log("Removed " + result) 
+        res.send(result) 
+    } catch (err) { 
+        res.status(500) 
+        res.send(`{"error": Error deleting ${err}}`); 
+    } 
 }; 
  
 // Handle Costume update form on PUT. 
@@ -80,3 +88,16 @@ ${JSON.stringify(req.body)}`)
 failed`); 
     } 
 };
+
+exports.costume_delete_Page = async function(req, res) { 
+    console.log("Delete view for id "  + req.query.id) 
+    try{ 
+        result = await Costume.findById(req.query.id) 
+        res.render('costumedelete', { title: 'Costume Delete', toShow: 
+result }); 
+    } 
+    catch(err){ 
+        res.status(500) 
+        res.send(`{'error': '${err}'}`); 
+    } 
+}; 
