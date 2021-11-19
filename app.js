@@ -40,7 +40,7 @@ var persisRouter = require('./routes/persis');
 var addmodsRouter = require('./routes/addmods');
 var selectorRouter = require('./routes/selector');
 var resource = require('./routes/resource');
-var costume = require('./routes/costumes')
+var costume = require('./routes/costumes');
  
 
 var app = express();
