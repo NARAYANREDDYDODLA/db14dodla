@@ -68,7 +68,7 @@ app.use('/persis', persisRouter);
 app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter);
 app.use('/resource',resource);
-app.use('/costume',costume)
+app.use('/costume',costume);
 
 // passport config 
 // Use the existing connection 
