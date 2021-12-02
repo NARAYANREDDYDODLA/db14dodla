@@ -1,8 +1,8 @@
 const mongoose = require("mongoose") 
 const costumeSchema = mongoose.Schema({ 
  costume_type: String, 
- size: String, 
- cost: Number 
+ size: {type: String, maxlength: 5}, 
+ cost:{ type: Number, min: 5, max: 35 }
 },{
     writeConcern: {
       w: 'majority',
